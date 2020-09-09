@@ -1,6 +1,223 @@
+:root {
+    /* Color */
+    --white-color: #ffffff;
+    --black-color: #140a00;
+    --blue-color: #045fd4;
+    --red-color: #ff0000;
+    --grey-dark-color: #909090;
+    --grey-light-color: #e0e0e0;
+
+    /* Size */
+    --padding: 12px;
+    --avatar-size: 30px;
+
+    /* Font Size */
+    --font-large: 18px;
+    --font-medium: 14px;
+    --font-small: 12px;
+    --font-micro: 10px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body{
     font-family: 'Roboto', sans-serif;
 }
 ul{
     list-style: none;
+}
+button,
+button:focus{
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: var(--white-color);
+}
+
+/*Header*/
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: var(--padding);
+    background-color: var(--black-color);
+    color: var(--white-color);
+}
+header .logo{
+    font-size: var(--font-large);
+}
+header .logo i{
+    color: var(--red-color);
+}
+header .icons i{
+    padding: 0 var(--padding);
+}
+
+/*Player*/
+.player{
+    position: sticky;
+    top: 0;
+    text-align: center;
+    background-color: var(--black-color);
+}
+.player video{
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+}
+
+/*Information*/
+.info{
+    padding: var(--padding);
+}
+.info .metadata .hashtag{
+    display: flex;
+    color: var(--blue-color);
+    font-size: var(--font-small);
+}
+.info .metadata .hashtag li{
+    margin-right: var(--padding);
+}
+.info .metadata .TitleAndButton{
+    display: flex;
+    margin-top: var(--padding);
+}
+.info .metadata .TitleAndButton .title{
+    font-size: var(--font-medium);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    margin-right: var(--padding);
+}
+.info .metadata .TitleAndButton .moreBtn{
+    height: 100%;
+}
+.info .views_{
+    font-size: var(--font-small);
+    color: var(--grey-dark-color);
+}
+
+/*Actions*/
+.action{
+    display: flex;
+    justify-content: space-around;
+    margin: var(--padding) 0;
+    color: var(--grey-dark-color);
+}
+.action button{
+    display: flex;
+    flex-direction: column;
+    color: var(--grey-dark-color);
+    font-size: var(--font-small);
+}
+.action i{
+    margin: 0 auto;
+    margin-bottom: calc(var(--padding)/2);
+    font-size: 16px;
+}
+.action button i.active{
+    color: var(--blue-color);
+}
+
+/*Channel*/
+.channel{
+    display: flex;
+    justify-content: space-between;
+    padding: calc(var(--padding)/2);
+    border-top: 1px solid var(--grey-light-color);
+    border-bottom: 1px solid var(--grey-light-color);
+    align-items: center;
+}
+.channel .matadata{
+    display: flex;
+    align-items: center;
+}
+.channel .matadata img{
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+    margin-right: var(--padding);
+    border-radius: 50%;
+}
+.channel .matadata .info_{
+    display: flex;
+    flex-direction: column;
+}
+.channel .matadata .info_ .subscribers{
+    font-size: var(--font-small);
+    color: var(--grey-dark-color);
+}
+.channel button.subscrive{
+    color: var(--white-color);
+    background-color: var(--red-color);
+    padding: 5px calc(var(--padding)/2);
+    border-radius: 4px;
+    height: 30px;
+    font-size: var(--font-medium);
+    text-transform: uppercase;
+}
+
+/*Up Next*/
+.UpNext{
+    padding: var(--padding);
+}
+.UpNext .item{
+    display: flex;
+    margin: calc(var(--padding)/2) 0;
+}
+.UpNext .title_{
+    font-size: var(--font-small);
+    color: var(--grey-dark-color);
+}
+.UpNext .item .img{
+    flex-basis: 35%;
+}
+.UpNext .item .img img{
+    width: 100%;
+}
+.UpNext .item .info_{
+    flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
+    margin-left: calc(var(--padding)/2);
+}
+.UpNext .item .button{
+    flex-basis: 5%;
+    height: 100%;
+}
+.UpNext .title{
+    font-size: var(--font-medium);
+    margin-bottom: calc(var(--padding)/2);
+}
+.UpNext .name{
+    font-size: var(--font-small);
+    color: var(--grey-dark-color);
+}
+.UpNext .views{
+    font-size: var(--font-small);
+    color: var(--grey-dark-color);
+}
+
+.infoAndUpNext{
+    display: flex;
+    flex-direction: column;
+}
+
+/*반응형 media queries*/
+@media screen and (min-width: 768px){
+    .infoAndUpNext{
+        flex-direction: row;
+    }
+    .player{
+        position: static;
+    }
+    .info{
+        flex-basis: 50%;
+    }
+    .UpNext{
+        flex-basis: 50%;
+    }
 }
