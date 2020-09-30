@@ -12,9 +12,6 @@
     --font-medium: 0.8rem;
     --font-large: 1rem;
 }
-/*html{
-    font-size: 12px;
-}*/
 
 body{
     font-family: 'Noto Serif KR', serif;
@@ -37,6 +34,14 @@ button{
     max-width: 1200px;
     margin: 0 auto;
 }
+.toggle_btn{
+    display: none;
+    position: absolute;
+    top: var(--padding);
+    right: var(--padding);
+    font-size: var(--padding);
+}
+/*Main Tickets*/
 .MainContents{
     flex-basis: 66%;
     padding: 0 var(--padding);
@@ -53,8 +58,22 @@ button{
 }
 .Tickets>li{
     display: flex;
+    min-height: 200px;
     padding: var(--padding) 0;
     border-top: 1px dashed var(--main-color);
+}
+.img{
+    flex-basis: 60%;
+}
+.img img{
+    width: 100%;
+    height: auto;
+}
+.Comments{
+    flex-basis: 40%;
+}
+.DateAndPoint{
+    flex-basis: 10%;
 }
 .Comments, .DateAndPoint{
     display: flex;
@@ -66,7 +85,7 @@ button{
     justify-content: space-between;
 }
 .Ctitle, .Date{
-    height: 2rem;
+    padding-bottom: calc(var(--small-padding)/2);
 }
 .Cgroup{
     display: flex;
@@ -88,13 +107,17 @@ button{
     text-decoration: underline;
     padding: 0;
 }
+.Point{
+    margin-top: calc(var(--small-padding));
+}
 .PointBall{
     width: 1rem;
     height: 1rem;
     border-radius: 0.5rem;
     background-color: var(--main-color);
-    margin: calc(var(--small-padding)/4) 0;
+    margin-bottom: calc(var(--small-padding)/4);
 }
+/*Side Footer*/
 .SideContents{
     height: 100%;
     position: sticky;
@@ -112,8 +135,11 @@ button{
     flex-direction: column;
 }
 .Ptitle{
-    height: 2rem;
+    padding-bottom: var(--padding);
     text-transform: uppercase;
+}
+.Pinfo{
+    line-height: 180%;
 }
 .Menu{
     display: flex;
@@ -155,4 +181,39 @@ footer{
 }
 .copyright{
     font-size: calc(var(--font-medium)/2);
+}
+
+/*반응형 media queries*/
+@media screen and (max-width: 768px){
+    .Container{
+        display: block;
+        margin: 0 var(--padding);
+        width: auto;
+    }
+    .toggle_btn{
+        display: block;
+    }
+    .MainContents{
+        display: block;
+        padding: 0;
+        width: 100%;
+    }
+    /*Side*/
+    .SideContents{
+    display: none;
+    }
+    /*Main Tickets*/
+    .Tickets>li{
+        flex-direction: column;
+    }
+    .Comments{
+        padding: var(--padding) 0;
+    }
+    .Point{
+        display: flex;
+    }
+    .PointBall{
+        margin-right: calc(var(--small-padding)/4);
+    }
+    /*Footer*/
 }
