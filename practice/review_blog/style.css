@@ -106,6 +106,7 @@ button{
     text-align: left;
     text-decoration: underline;
     padding: 0;
+    padding-top: var(--small-padding);
 }
 .Point{
     margin-top: calc(var(--small-padding));
