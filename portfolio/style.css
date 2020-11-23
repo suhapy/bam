@@ -156,8 +156,25 @@ button {
 
 /*반응형*/
 @media screen and (max-width: 768px) {
+  header {
+    padding: var(--smallPadding);
+  }
+
   .mainContents {
     flex-direction: column;
+    padding: calc(var(--smallPadding) / 2);
+  }
+
+  .content {
+    padding: calc(var(--smallPadding) / 2);
+  }
+
+  footer {
+    padding: var(--smallPadding);
+  }
+
+  .projectContents {
+    padding: var(--smallPadding);
   }
 
   .projectIntro {
