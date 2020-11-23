@@ -1,0 +1,182 @@
+:root {
+  --padding: 1.2rem;
+  --smallPadding: 0.6rem;
+  --fontLarge: 1.6rem;
+  --fontMedium: 1.2rem;
+  --fontSmall: 1rem;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h1 {
+  font-size: var(--fontLarge);
+  line-height: 110%;
+}
+
+header {
+  padding: var(--padding);
+  display: flex;
+}
+
+.mainName {
+  flex-basis: 50%;
+}
+
+.subName {
+  flex-basis: 50%;
+}
+
+.mainContents {
+  padding: var(--smallPadding);
+  display: flex;
+}
+
+.content {
+  padding: var(--smallPadding);
+  flex-basis: 50%;
+}
+
+.content .title {
+  font-size: var(--fontSmall);
+}
+
+.img img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.img :hover {
+  transform: scale(0.95);
+  transition: 0.5s;
+}
+
+footer {
+  padding: var(--padding);
+  display: flex;
+}
+
+.mainFooter {
+  flex-basis: 50%;
+}
+
+.subFooter {
+  flex-basis: 50%;
+}
+
+/*project html*/
+
+.projectContents {
+  padding: var(--padding);
+}
+
+.projectIntro {
+  display: flex;
+}
+
+.projectName {
+  flex-basis: 50%;
+  font-size: var(--fontMedium);
+  font-weight: bold;
+}
+
+.projectInfo {
+  flex-basis: 50%;
+  font-size: var(--fontMedium);
+  line-height: 130%;
+}
+
+.projectVideo {
+  text-align: center;
+}
+
+.projectVideo video {
+  width: 100%;
+  height: 100%;
+}
+
+.projectImg img {
+  width: 100%;
+  height: auto;
+}
+
+.imgIntro {
+  display: flex;
+}
+
+.imgName {
+  flex-basis: 50%;
+  font-size: var(--fontMedium);
+}
+
+.imgInfo {
+  flex-basis: 50%;
+  font-size: var(--fontSmall);
+  line-height: 130%;
+  color: gray;
+}
+
+/*contact html*/
+
+.contactContents {
+  padding: var(--padding);
+  display: flex;
+}
+
+.myInfo,
+.contactFill {
+  flex-basis: 50%;
+}
+
+.fill {
+  padding-bottom: var(--smallPadding);
+}
+
+ul {
+  padding-bottom: var(--padding);
+}
+
+li {
+  padding-bottom: var(--padding);
+}
+
+button {
+  font-size: var(--fontLarge);
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  padding: 0;
+}
+
+/*반응형*/
+@media screen and (max-width: 768px) {
+  .mainContents {
+    flex-direction: column;
+  }
+
+  .projectIntro {
+    flex-direction: column;
+  }
+
+  .projectName {
+    padding-bottom: var(--padding);
+  }
+
+  .imgIntro {
+    flex-direction: column;
+  }
+
+  .imgName {
+    padding-bottom: var(--padding);
+  }
+
+  .contactContents {
+    flex-direction: column;
+  }
+}
